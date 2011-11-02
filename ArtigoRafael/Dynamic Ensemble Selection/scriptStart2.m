@@ -29,14 +29,14 @@ randomSubspaces = 2;                %rss ensemble
 
 %getting the data to perform the nearestneighbor algorithm
 
-train.data = getData(trainDataset);
+train.data = getdata(trainDataset);
 train.labels = getlab(trainDataset);
-validation.data = getData(validationDataset);
+validation.data = getdata(validationDataset);
 validation.labels = getlab(validationDataset);
-test.data = getData(testDataset);
+test.data = getdata(testDataset);
 test.labels = getlab(testDataset);
 
-adaptiveWeights = getAdaptiveWeights(validation.data,validation.labels,range);
+adaptiveWeights = getAdaptiveWeights(validation.data, validation.labels);
 
 
     %generate the ensemble

@@ -43,7 +43,7 @@ elseif strcmpi(name,'breast') == 1,
   
 elseif  strcmpi(name,'sonar') == 1,
   
-  load ./Databases/Sonar/Sonar.data;
+  load Sonar.data;
   data = dataset(Sonar(:,1:60),Sonar(:,61));
   [train,test] =  gendat(data,0.5);
   [train,validation] =  gendat(train,0.75);
@@ -52,7 +52,7 @@ elseif  strcmpi(name,'sonar') == 1,
   
 elseif  strcmpi(name,'ionosphere') == 1,
   
-  load ./Databases/Ionosphere/ionosphere.data;
+  load ionosphere.data;
   data = dataset(ionosphere(:,1:34),ionosphere(:,35));
   
     %The mean of A  is shifted to the origin and the average class 
@@ -68,8 +68,8 @@ elseif  strcmpi(name,'ionosphere') == 1,
 
 elseif    strcmpi(name,'segmentation') == 1,
     
-    load ./Databases/Segmentation/segmentationTraining.data;
-    load ./Databases/Segmentation/segmentationTest.data;
+    load segmentationTraining.data;
+    load segmentationTest.data;
     
     train = dataset(segmentationTraining(:,2:20),segmentationTraining(:,1));
     test = dataset(segmentationTest(:,2:20),segmentationTest(:,1));
@@ -95,7 +95,7 @@ elseif    strcmpi(name,'segmentation') == 1,
  
 elseif  strcmpi(name,'liver') == 1,
     
-    load ./Databases/liver/bupa.data;
+    load bupa.data;
     data = dataset(bupa(:,1:6),bupa(:,7));
     
     %The mean of A  is shifted to the origin and the average class 
@@ -112,8 +112,8 @@ elseif  strcmpi(name,'liver') == 1,
 
 elseif  strcmpi(name,'optdigit') == 1,
     
-    load ./Databases/optdigits/optdigitsTrain.data;
-    load ./Databases/optdigits/optdigitsTest.data;
+    load optdigitsTrain.data;
+    load optdigitsTest.data;
     
     train = optdigitsTrain;
     optdigitsTrain = [];
@@ -144,7 +144,7 @@ elseif  strcmpi(name,'optdigit') == 1,
 
 elseif  strcmpi(name,'wine') == 1,   
     
-    load ./Databases/Wine/wine.data;
+    load wine.data;
     data = wine(:,2:14);
     labels = wine(:,1);
     
@@ -165,8 +165,8 @@ elseif  strcmpi(name,'wine') == 1,
    
   elseif  strcmpi(name,'satimage') == 1, 
       
-    load ./Databases/satimage/training.trn;
-    load ./Databases/satimage/testing.data;
+    load training.trn;
+    load testing.data;
 
     train = dataset(training(:,2:20),training(:,1));
     test = dataset(testing(:,2:20),testing(:,1));
@@ -230,15 +230,15 @@ elseif strcmpi(name,'banana') == 1,
    
 elseif strcmpi(name,'vehicle') == 1, 
     
-    load ./Databases/Vehicle/xaa.dat;
-    load ./Databases/Vehicle/xab.dat;
-    load ./Databases/Vehicle/xac.dat;
-    load ./Databases/Vehicle/xad.dat;
-    load ./Databases/Vehicle/xae.dat;
-    load ./Databases/Vehicle/xaf.dat;
-    load ./Databases/Vehicle/xag.dat;
-    load ./Databases/Vehicle/xah.dat;
-    load ./Databases/Vehicle/xai.dat;
+    load xaa.dat;
+    load xab.dat;
+    load xac.dat;
+    load xad.dat;
+    load xae.dat;
+    load xaf.dat;
+    load xag.dat;
+    load xah.dat;
+    load xai.dat;
     
     vehicle = [xaa ; xab ; xac ; xad ; xae ; xaf ; xag ; xah ; xai];
     
@@ -273,7 +273,7 @@ elseif strcmpi(name,'lithuanian') == 1,
    
 elseif  strcmpi(name,'blood') == 1,   
     
-    load ./Databases/Blood/transfusion.data;
+    load transfusion.data;
     data = transfusion(:,1:4);
     labels = transfusion(:,5);
     
