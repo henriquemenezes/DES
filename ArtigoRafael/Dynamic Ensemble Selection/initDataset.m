@@ -1,90 +1,95 @@
-function [ train,test, validation, range, data ] = initDataset( name, withENN, k )
+function [train, test, validation, range, data] = initDataset(name, withENN, k)
 
-if strcmpi(name,'pima') == 1,
+if strcmpi(name, 'pima') == 1,
     
     load pima.data;
-    data = dataset( pima(:,1:8) , pima(:,9) );
+    data = dataset(pima(:,1:8), pima(:,9));
     
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.     
     
     w = scalem(data,'c-variance');
     data = data * w;       
     
-    [train,test] =  gendat(data,0.5);
-    [train,validation] =  gendat(train,0.75);
+    [train, test] = gendat(data, 0.5);
+    [train, validation] = gendat(train, 0.75);
    
-    range = max( train.data ) - min( train.data );
+    range = max(train.data) - min(train.data);
     
-elseif strcmpi(name,'breast') == 1,
+elseif strcmpi(name, 'breast') == 1,
     
     load breast.data
-    %breast dataset
+    
     breast(:,1) = [];
     labels = breast(:,1);
     breast(:,2) = [];
     breast(:,1) = [];
  
-    %range for distance measure
-    data = dataset(breast(:,1:30),labels);
-        
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are taken
-    %into account.     
+    % range for distance measure
+    data = dataset(breast(:,1:30), labels);
+    
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.   
     
     w = scalem(data,'c-variance');
     data = data * w;       
     
-    [train,test] =  gendat(data,0.5);
-    [train,validation] =  gendat(train,0.75);
+    [train, test] =  gendat(data, 0.5);
+    [train, validation] =  gendat(train, 0.75);
    
     range = (max(train.data) - min(train.data));
   
-elseif  strcmpi(name,'sonar') == 1,
-  
-  load Sonar.data;
-  data = dataset(Sonar(:,1:60),Sonar(:,61));
-  [train,test] =  gendat(data,0.5);
-  [train,validation] =  gendat(train,0.75);
- 
-  range = (max(train.data) - min(train.data));
-  
+elseif strcmpi(name, 'sonar') == 1,
+
+	load Sonar.data;
+
+	data = dataset(Sonar(:,1:60),Sonar(:,61));
+
+	[train,test] =  gendat(data,0.5);
+	[train,validation] =  gendat(train,0.75);
+
+	range = (max(train.data) - min(train.data));
+
 elseif  strcmpi(name,'ionosphere') == 1,
-  
-  load ionosphere.data;
-  data = dataset(ionosphere(:,1:34),ionosphere(:,35));
-  
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
-    
-    w = scalem(data,'c-variance');
-    data = data * w;     
-  
-  [train,test] =  gendat(data,0.5);
-  [train,validation] =  gendat(train,0.75);
-  range = (max(train.data) - min(train.data));    
+
+	load ionosphere.data;
+
+	data = dataset(ionosphere(:,1:34), ionosphere(:,35));
+
+	% The mean of A is shifted to the origin and the average class 
+	% variances (within-scatter) are normalized. Class priors are 
+	% taken into account.     
+
+	w = scalem(data,'c-variance');
+	data = data * w;     
+
+	[train,test] =  gendat(data, 0.5);
+	[train,validation] =  gendat(train, 0.75);
+
+	range = (max(train.data) - min(train.data));
 
 elseif    strcmpi(name,'segmentation') == 1,
     
     load segmentationTraining.data;
     load segmentationTest.data;
     
-    train = dataset(segmentationTraining(:,2:20),segmentationTraining(:,1));
-    test = dataset(segmentationTest(:,2:20),segmentationTest(:,1));
+    train = dataset(segmentationTraining(:,2:20), segmentationTraining(:,1));
+    test = dataset(segmentationTest(:,2:20), segmentationTest(:,1));
     
-    
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.
+	
     w = scalem(train,'c-variance');
     train = train * w; 
     
     
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account. 
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.
+	
     w = scalem(test,'c-variance');
     test = test * w; 
     
@@ -98,9 +103,9 @@ elseif  strcmpi(name,'liver') == 1,
     load bupa.data;
     data = dataset(bupa(:,1:6),bupa(:,7));
     
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.     
     
     w = scalem(data,'c-variance');
     data = data * w;    
@@ -109,7 +114,6 @@ elseif  strcmpi(name,'liver') == 1,
     [train,validation] =  gendat(train,0.75);
     range = (max(train.data) - min(train.data));
     
-
 elseif  strcmpi(name,'optdigit') == 1,
     
     load optdigitsTrain.data;
@@ -123,21 +127,21 @@ elseif  strcmpi(name,'optdigit') == 1,
     train = dataset(train(:,1:64),train(:,65));
     test = dataset(test(:,1:64),test(:,65));
     
-    
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
-    w = scalem(train,'c-variance');
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.
+	
+    w = scalem(train, 'c-variance');
     train = train * w; 
     
-    
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account. 
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.
+	
     w = scalem(test,'c-variance');
     test = test * w; 
     
-    [train,validation] =  gendat(train,0.75);
+    [train, validation] =  gendat(train,0.75);
    
     range = max(train.data) - min(train.data);
     data = train;
@@ -150,30 +154,29 @@ elseif  strcmpi(name,'wine') == 1,
     
     data = dataset(data,labels);
 
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.     
     
     w = scalem(data,'c-variance');
     data = data * w;
-     
+
     [train,test] =  gendat(data,0.5);
     [train,validation] =  gendat(train,0.75);
     
     range = max(train.data) - min(train.data);
-
    
   elseif  strcmpi(name,'satimage') == 1, 
       
     load training.trn;
     load testing.data;
 
-    train = dataset(training(:,2:20),training(:,1));
-    test = dataset(testing(:,2:20),testing(:,1));
+    train = dataset(training(:,2:20), training(:,1));
+    test = dataset(testing(:,2:20), testing(:,1));
 
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.     
     
     w = scalem(train,'c-variance');
     train = train * w;
@@ -213,7 +216,7 @@ elseif strcmpi(name,'gaussian3') == 1,
    [train,test] =  gendat(data,0.50);
    [train,validation] =  gendat(train,0.75);
    
-   range = max( train.data ) - min( train.data );
+   range = max(train.data) - min(train.data);
     
    
 elseif strcmpi(name,'banana') == 1, 
@@ -226,7 +229,7 @@ elseif strcmpi(name,'banana') == 1,
    [train,test] =  gendat(data,0.50);
    [train,validation] =  gendat(train,0.75);
    
-   range = max( train.data ) - min( train.data );
+   range = max(train.data) - min(train.data);
    
 elseif strcmpi(name,'vehicle') == 1, 
     
@@ -247,9 +250,9 @@ elseif strcmpi(name,'vehicle') == 1,
     
     data = dataset(data,labels);
 
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.
     
     w = scalem(data,'c-variance');
     data = data * w;
@@ -279,9 +282,9 @@ elseif  strcmpi(name,'blood') == 1,
     
     data = dataset(data,labels);
 
-    %The mean of A  is shifted to the origin and the average class 
-    %variances (within-scatter) are normalized.  Class priors are 
-    %taken into account.     
+    % The mean of A is shifted to the origin and the average class 
+    % variances (within-scatter) are normalized. Class priors are 
+    % taken into account.
     
     w = scalem(data,'c-variance');
     data = data * w;

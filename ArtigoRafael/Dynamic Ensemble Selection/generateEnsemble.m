@@ -1,27 +1,27 @@
-%Function used to generate the ensemble. The ensemble can be generated
-%using either Adaboost or Bagging. The vector combined has the weights
-%values according when the method Adaboost is used (Weights according to
-%adaboost combination)
+% Função usada para gerar os ensemble (conjunto de classificadores). O ensemble pode ser gerado
+% usando ambos os métodos Adaboost ou Bagging. O vetor é combinado com os valores dos pesos 
+% quando o método Adaboost é usado.
+%
+% Entradas:
+% - data: conjunto de dados (sem a classe)*
+% - numClassifiers: total de classificadores
+% - method: método de geração (Adaboost=1) ou (Bagging=0)
+% - weakClassifier: tipo de classificadores
+%
+% Saídas:
+% - ensemble: conjunto de classificadores gerados
+% - combined: vetor com os pesos (Adaboost)
 
-function [ensemble,combined] = generateEnsemble( data, numClassifiers, method, weakClassifier )
+function [ensemble, combined] = generateEnsemble( data, numClassifiers, method, weakClassifier )
 
-%method
-%adaboost = 1
-%bagging = 0
+combined = []; % usado para o Adaboost
 
-combined = [];                   %used for adaboost combination rule                 %
-
-%creating a prtools dataset and splitting into train (70%) and test (30%)
-%[prTrain,prTest] = gendat(data,0.5);
-
-%Using the passed weak classifiers
 if method == 0,
-    ensemble = baggingc(data,weakClassifier,numClassifiers,[],[]);
+    ensemble = baggingc(data, weakClassifier, numClassifiers,[],[]);
 elseif method == 1,
-    [combined,ensemble,alf] = adaboostc(data,weakClassifier,numClassifiers);%,[],[]);
-    
+    [combined, ensemble, alf] = adaboostc(data, weakClassifier, numClassifiers);
 else
-    ensemble = rsscc(data,weakClassifier,4,numClassifiers);
+    ensemble = rsscc(data, weakClassifier, 4, numClassifiers);
 end;
 
 

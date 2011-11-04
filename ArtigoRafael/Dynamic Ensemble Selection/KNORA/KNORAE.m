@@ -1,4 +1,4 @@
-%Implements the KNORAE dynamic ensemble selection algorithm. 
+% Implements the KNORAE dynamic ensemble selection algorithm. 
 
 function [ totalError, errors, result, selectorPerformance ] = KNORAE( train, test, range, ensemble, numClassifiers, k, adaptiveWeights,withAKNN  )
 

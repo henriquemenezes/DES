@@ -1,12 +1,15 @@
 % Executa o k-NN (c/ Distância Euclidiana)
+%
 % Entradas:
 % - data: conjunto de dados (sem a classe)
 % - query: padrão de consulta
 % - k: total de vizinhos
+%
 % Saídas:
 % - nearests: os k vizinhos mais próximos
 % - distances: as distâncias ordenadas da menor para maior
 % - idx: os indices dos k vizinhos com relação a data
+
 function [nearests, distances, idx] = knn(data, query, range, k)
 
 [row col] = size(data);
