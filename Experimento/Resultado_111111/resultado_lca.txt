@@ -1,0 +1,46 @@
+Linear Perceptron, untrained  mapping   --> perlc
+Database vehicle
+Test results result for LCA 23.459716 
+Test results result for LCA 23.696682 
+Test results result for LCA 21.800948 
+ProcessingTime 42.464151
+Database sonar
+Test results result for LCA 23.300971 
+Test results result for LCA 34.951456 
+Test results result for LCA 27.184466 
+ProcessingTime 12.497210
+Database ionosphere
+Test results result for LCA 18.857143 
+Test results result for LCA 25.714286 
+Test results result for LCA 21.142857 
+ProcessingTime 14.985801
+Database pima
+Test results result for LCA 25.000000 
+Test results result for LCA 27.604167 
+Test results result for LCA 23.958333 
+ProcessingTime 75.298012
+Database liver
+Test results result for LCA 44.767442 
+Test results result for LCA 36.046512 
+Test results result for LCA 38.372093 
+ProcessingTime 41.702040
+Database breast
+Test results result for LCA 6.690141 
+Test results result for LCA 2.464789 
+Test results result for LCA 7.746479 
+ProcessingTime 20.764087
+Database blood
+Test results result for LCA 25.133690 
+Test results result for LCA 23.529412 
+Test results result for LCA 30.481283 
+ProcessingTime 84.794272
+Database banana
+Test results result for LCA 9.200000 
+Test results result for LCA 6.200000 
+Test results result for LCA 11.600000 
+ProcessingTime 52.904099
+Database lithuanian
+Test results result for LCA 5.666667 
+Test results result for LCA 4.666667 
+Test results result for LCA 3.666667 
+ProcessingTime 39.671990

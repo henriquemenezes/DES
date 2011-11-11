@@ -1,0 +1,46 @@
+Linear Perceptron, untrained  mapping   --> perlc
+Database vehicle
+Test results result for KNORAE 17.298578 
+Test results result for KNORAE 19.431280 
+Test results result for KNORAE 15.402844 
+ProcessingTime 113.993231
+Database sonar
+Test results result for KNORAE 24.271845 
+Test results result for KNORAE 17.475728 
+Test results result for KNORAE 24.271845 
+ProcessingTime 37.362264
+Database ionosphere
+Test results result for KNORAE 14.857143 
+Test results result for KNORAE 9.142857 
+Test results result for KNORAE 11.428571 
+ProcessingTime 39.904210
+Database pima
+Test results result for KNORAE 27.864583 
+Test results result for KNORAE 25.000000 
+Test results result for KNORAE 24.479167 
+ProcessingTime 186.180574
+Database liver
+Test results result for KNORAE 28.488372 
+Test results result for KNORAE 45.348837 
+Test results result for KNORAE 37.790698 
+ProcessingTime 133.787246
+Database breast
+Test results result for KNORAE 5.985915 
+Test results result for KNORAE 3.169014 
+Test results result for KNORAE 2.816901 
+ProcessingTime 29.811993
+Database blood
+Test results result for KNORAE 23.262032 
+Test results result for KNORAE 22.994652 
+Test results result for KNORAE 25.401070 
+ProcessingTime 199.762578
+Database banana
+Test results result for KNORAE 11.200000 
+Test results result for KNORAE 8.800000 
+Test results result for KNORAE 9.400000 
+ProcessingTime 106.324248
+Database lithuanian
+Test results result for KNORAE 12.333333 
+Test results result for KNORAE 13.000000 
+Test results result for KNORAE 12.666667 
+ProcessingTime 106.665564

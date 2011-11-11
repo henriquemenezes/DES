@@ -1,0 +1,46 @@
+Linear Perceptron, untrained  mapping   --> perlc
+Database vehicle
+Test results result for OLA 17.772512 
+Test results result for OLA 23.459716 
+Test results result for OLA 21.327014 
+ProcessingTime 72.350712
+Database sonar
+Test results result for OLA 26.213592 
+Test results result for OLA 30.097087 
+Test results result for OLA 16.504854 
+ProcessingTime 17.659622
+Database ionosphere
+Test results result for OLA 16.000000 
+Test results result for OLA 20.000000 
+Test results result for OLA 14.857143 
+ProcessingTime 27.392735
+Database pima
+Test results result for OLA 29.687500 
+Test results result for OLA 27.604167 
+Test results result for OLA 30.729167 
+ProcessingTime 100.139339
+Database liver
+Test results result for OLA 32.558140 
+Test results result for OLA 33.139535 
+Test results result for OLA 36.627907 
+ProcessingTime 60.540541
+Database breast
+Test results result for OLA 3.521127 
+Test results result for OLA 5.281690 
+Test results result for OLA 4.225352 
+ProcessingTime 22.514404
+Database blood
+Test results result for OLA 20.855615 
+Test results result for OLA 19.786096 
+Test results result for OLA 21.122995 
+ProcessingTime 96.055268
+Database banana
+Test results result for OLA 9.600000 
+Test results result for OLA 7.600000 
+Test results result for OLA 8.000000 
+ProcessingTime 67.025697
+Database lithuanian
+Test results result for OLA 6.666667 
+Test results result for OLA 5.000000 
+Test results result for OLA 6.333333 
+ProcessingTime 52.362479
