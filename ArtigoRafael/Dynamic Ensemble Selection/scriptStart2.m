@@ -36,18 +36,26 @@ for i = 1 : 3
     tic;
 
     % KNORA-Eliminate
-    [totalError, error, results, selectorPerformance] = KNORAE(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN);
+    [totalError, error, results, selectorPerformance] = KNORAE(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, meanc);
 
     % KNORA-Union
     % [totalErrorKNORAU, results] = KNORAU(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN);
 
     % OLA-DES
-    %[totalError, error, results] = OLA(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN);
-    %selectorPerformance = 0;
+    [totalError, error, results] = OLA(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, meanc);
+    selectorPerformance = 0;
 
     % LCA-DES
-    %[totalError, error, results] = LCA(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN);
-    %selectorPerformance = 0;
+    [totalError, error, results] = LCA(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, meanc);
+    selectorPerformance = 0;
+    
+    % LCA2-DES
+    [totalError, error, results] = LCA2(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, meanc);
+    selectorPerformance = 0;
+    
+    % LCA3-DES
+    [totalError, error, results] = LCA3(validation, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, meanc);
+    selectorPerformance = 0;
 
     % Variáveis para análise: Tempo de execução e resultado
     processingTime = [processingTime toc];

@@ -1,0 +1,45 @@
+Database vehicle
+Test results result for LCA3 20.853081 
+Test results result for LCA3 20.142180 
+Test results result for LCA3 22.511848 
+ProcessingTime 47.282896
+Database sonar
+Test results result for LCA3 24.271845 
+Test results result for LCA3 25.242718 
+Test results result for LCA3 24.271845 
+ProcessingTime 23.675995
+Database ionosphere
+Test results result for LCA3 22.857143 
+Test results result for LCA3 18.857143 
+Test results result for LCA3 20.571429 
+ProcessingTime 17.895563
+Database pima
+Test results result for LCA3 32.552083 
+Test results result for LCA3 30.468750 
+Test results result for LCA3 28.645833 
+ProcessingTime 103.972238
+Database liver
+Test results result for LCA3 34.883721 
+Test results result for LCA3 40.116279 
+Test results result for LCA3 43.023256 
+ProcessingTime 60.843398
+Database breast
+Test results result for LCA3 6.338028 
+Test results result for LCA3 4.577465 
+Test results result for LCA3 7.394366 
+ProcessingTime 26.773743
+Database blood
+Test results result for LCA3 30.481283 
+Test results result for LCA3 31.283422 
+Test results result for LCA3 26.470588 
+ProcessingTime 107.992262
+Database banana
+Test results result for LCA3 47.200000 
+Test results result for LCA3 40.200000 
+Test results result for LCA3 44.800000 
+ProcessingTime 57.304344
+Database lithuanian
+Test results result for LCA3 37.333333 
+Test results result for LCA3 46.666667 
+Test results result for LCA3 20.666667 
+ProcessingTime 53.263639

@@ -1,0 +1,45 @@
+Database vehicle
+Test results result for OLA 22.037915 
+Test results result for OLA 19.905213 
+Test results result for OLA 19.905213 
+ProcessingTime 76.187933
+Database sonar
+Test results result for OLA 27.184466 
+Test results result for OLA 26.213592 
+Test results result for OLA 24.271845 
+ProcessingTime 23.776784
+Database ionosphere
+Test results result for OLA 13.714286 
+Test results result for OLA 17.714286 
+Test results result for OLA 15.428571 
+ProcessingTime 28.522243
+Database pima
+Test results result for OLA 30.989583 
+Test results result for OLA 31.510417 
+Test results result for OLA 24.479167 
+ProcessingTime 115.187342
+Database liver
+Test results result for OLA 36.627907 
+Test results result for OLA 37.790698 
+Test results result for OLA 41.279070 
+ProcessingTime 66.484448
+Database breast
+Test results result for OLA 2.816901 
+Test results result for OLA 4.225352 
+Test results result for OLA 3.521127 
+ProcessingTime 25.210721
+Database blood
+Test results result for OLA 26.737968 
+Test results result for OLA 23.529412 
+Test results result for OLA 20.855615 
+ProcessingTime 113.225302
+Database banana
+Test results result for OLA 6.600000 
+Test results result for OLA 6.200000 
+Test results result for OLA 5.600000 
+ProcessingTime 75.720724
+Database lithuanian
+Test results result for OLA 7.666667 
+Test results result for OLA 4.666667 
+Test results result for OLA 13.000000 
+ProcessingTime 64.198171

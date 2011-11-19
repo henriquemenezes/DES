@@ -1,0 +1,45 @@
+Database vehicle
+Test results result for LCA2 24.881517 
+Test results result for LCA2 23.933649 
+Test results result for LCA2 26.066351 
+ProcessingTime 42.464951
+Database sonar
+Test results result for LCA2 28.155340 
+Test results result for LCA2 28.155340 
+Test results result for LCA2 34.951456 
+ProcessingTime 11.709616
+Database ionosphere
+Test results result for LCA2 21.142857 
+Test results result for LCA2 24.571429 
+Test results result for LCA2 24.571429 
+ProcessingTime 16.076244
+Database pima
+Test results result for LCA2 30.989583 
+Test results result for LCA2 34.635417 
+Test results result for LCA2 41.145833 
+ProcessingTime 50.402927
+Database liver
+Test results result for LCA2 49.418605 
+Test results result for LCA2 37.209302 
+Test results result for LCA2 44.767442 
+ProcessingTime 22.353778
+Database breast
+Test results result for LCA2 4.225352 
+Test results result for LCA2 9.507042 
+Test results result for LCA2 4.577465 
+ProcessingTime 22.577757
+Database blood
+Test results result for LCA2 50.267380 
+Test results result for LCA2 33.155080 
+Test results result for LCA2 37.433155 
+ProcessingTime 40.530662
+Database banana
+Test results result for LCA2 43.400000 
+Test results result for LCA2 41.400000 
+Test results result for LCA2 44.000000 
+ProcessingTime 48.711387
+Database lithuanian
+Test results result for LCA2 46.000000 
+Test results result for LCA2 34.333333 
+Test results result for LCA2 44.000000 
+ProcessingTime 31.428542

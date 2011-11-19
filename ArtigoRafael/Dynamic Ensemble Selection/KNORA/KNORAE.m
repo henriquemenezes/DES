@@ -1,5 +1,5 @@
 % Implements the KNORAE dynamic ensemble selection algorithm. 
-function [ totalError, errors, result, selectorPerformance ] = KNORAE( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN )
+function [ totalError, errors, result, selectorPerformance ] = KNORAE( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, combMethod )
 
 [numTest, numCol] = size(test.data);
 totalError = 0;
@@ -29,7 +29,7 @@ for testIndex = 1 : numTest
 		
 		[dynamicEnsemble, selection, correct] = selectEnsemble(nearestsDataset, ensemble, numClassifiers, testPr);
 
-        comb = dynamicEnsemble * votec;
+        comb = dynamicEnsemble * combMethod;
         temp = testc(testPr, comb);
 	end;
     
@@ -43,6 +43,6 @@ end;
 selectorPerformance = (correct/(numTest * numClassifiers)) * 100;
 
 result = 100 - ( (totalError/numTest) * 100 );
-fprintf('Test results result for KNORAE %f \n',(totalError/numTest) * 100);
+fprintf('Error_KNORAE %f \n',(totalError/numTest) * 100);
 
 close(h);

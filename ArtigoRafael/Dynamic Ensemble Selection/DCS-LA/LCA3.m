@@ -1,11 +1,11 @@
-function [ totalError, errors, result ] = LCA( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, combMethod )
+function [ totalError, errors, result ] = LCA3( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, combMethod )
 
 [numTest, numCol] = size(test.data);
 totalError = 0;
 errors.data = [];
 errors.labels = [];
 
-h = waitbar(0,'LCA...');
+h = waitbar(0,'LCA3...');
 
 for testIndex = 1 : numTest
     waitbar(testIndex/numTest)
@@ -34,6 +34,8 @@ for testIndex = 1 : numTest
             
             totalClassify = 0;
             totalCorrect = 0;
+            totalClassify2 = 0;
+            totalCorrect2 = 0;
             
             for i = 1 : size(labelNearests, 1)
                 if labelPr == labelClassifier(i),
@@ -42,9 +44,18 @@ for testIndex = 1 : numTest
                         totalCorrect = totalCorrect + 1;
                     end;
                 end;
+                
+                if labelPr == labelNearests(i),
+                    totalClassify2 = totalClassify2 + 1;
+                    if labelPr == labelClassifier(i),
+                        totalCorrect2 = totalCorrect2 + 1;
+                    end;
+                end;
             end;
             
-            accuracy = totalCorrect / totalClassify;
+            accuracy1 = totalCorrect / totalClassify;
+            accuracy2 = totalCorrect2 / totalClassify2;
+            accuracy = (accuracy1 + accuracy2) / 2;
             
             classAccuracy = [classAccuracy accuracy];
         end;
@@ -72,6 +83,8 @@ for testIndex = 1 : numTest
 
                 totalClassify = 0;
                 totalCorrect = 0;
+                totalClassify2 = 0;
+                totalCorrect2 = 0;
 
                 for idxNearest = 1 : size(labelNearests, 1)
                     if labelPr == labelClassifier(idxNearest),
@@ -80,9 +93,18 @@ for testIndex = 1 : numTest
                             totalCorrect = totalCorrect + 1;
                         end;
                     end;
+                    
+                    if labelPr == labelNearests(idxNearest),
+                        totalClassify2 = totalClassify2 + 1;
+                        if labelPr == labelClassifier(idxNearest),
+                            totalCorrect2 = totalCorrect2 + 1;
+                        end;
+                    end;
                 end;
 
-                accuracyEnsemble = totalCorrect / totalClassify;
+                accuracyEnsemble1 = totalCorrect / totalClassify;
+                accuracyEnsemble2 = totalCorrect2 / totalClassify2;
+                accuracyEnsemble = (accuracyEnsemble1 + accuracyEnsemble2) / 2;
 
                 if accuracyEnsemble > currentAccuracy,
                     currentAccuracy = accuracyEnsemble;
@@ -105,7 +127,7 @@ for testIndex = 1 : numTest
 end;
 
 result = 100 - ( (totalError/numTest) * 100 );
-fprintf('Error_LCA %f \n',(totalError/numTest) * 100);
+fprintf('Error_LCA3 %f \n',(totalError/numTest) * 100);
 
 close(h);
 

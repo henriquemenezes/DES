@@ -1,11 +1,11 @@
-function [ totalError, errors, result ] = LCA( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, combMethod )
+function [ totalError, errors, result ] = LCA2( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, combMethod )
 
 [numTest, numCol] = size(test.data);
 totalError = 0;
 errors.data = [];
 errors.labels = [];
 
-h = waitbar(0,'LCA...');
+h = waitbar(0,'LCA2...');
 
 for testIndex = 1 : numTest
     waitbar(testIndex/numTest)
@@ -36,9 +36,9 @@ for testIndex = 1 : numTest
             totalCorrect = 0;
             
             for i = 1 : size(labelNearests, 1)
-                if labelPr == labelClassifier(i),
+                if labelPr == labelNearests(i),
                     totalClassify = totalClassify + 1;
-                    if labelPr == labelNearests(i),
+                    if labelPr == labelClassifier(i),
                         totalCorrect = totalCorrect + 1;
                     end;
                 end;
@@ -74,9 +74,9 @@ for testIndex = 1 : numTest
                 totalCorrect = 0;
 
                 for idxNearest = 1 : size(labelNearests, 1)
-                    if labelPr == labelClassifier(idxNearest),
+                    if labelPr == labelNearests(idxNearest),
                         totalClassify = totalClassify + 1;
-                        if labelPr == labelNearests(idxNearest),
+                        if labelPr == labelClassifier(idxNearest),
                             totalCorrect = totalCorrect + 1;
                         end;
                     end;
@@ -105,7 +105,7 @@ for testIndex = 1 : numTest
 end;
 
 result = 100 - ( (totalError/numTest) * 100 );
-fprintf('Error_LCA %f \n',(totalError/numTest) * 100);
+fprintf('Error_LCA2 %f \n',(totalError/numTest) * 100);
 
 close(h);
 

@@ -1,4 +1,3 @@
-Linear Perceptron, untrained  mapping   --> perlc
 Database vehicle
 Test results result for LCA 23.459716 
 Test results result for LCA 23.696682 

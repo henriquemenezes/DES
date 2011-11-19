@@ -1,4 +1,4 @@
-function [ totalError, errors, result ] = OLA( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN )
+function [ totalError, errors, result ] = OLA( train, test, range, ensemble, numClassifiers, k, adaptiveWeights, withAKNN, combMethod )
 
 [numTest, numCol] = size(test.data);
 totalError = 0;
@@ -47,18 +47,18 @@ for testIndex = 1 : numTest
                 tempDE = [dynamicEnsemble ensemble{rankIdx(i)}];
                 tempDEIdx = [dynamicEnsembleIdx rankIdx(i)];
 
-                tempDE_Votec = tempDE * votec;
-                error_tempDE_Votec = testc(nearestsDataset, tempDE_Votec);
+                tempDE_combMethod = tempDE * combMethod;
+                error_tempDE_combMethod = testc(nearestsDataset, tempDE_combMethod);
 
-                if error_tempDE_Votec < currentError,
-                    currentError = error_tempDE_Votec;
+                if error_tempDE_combMethod < currentError,
+                    currentError = error_tempDE_combMethod;
                     dynamicEnsemble = tempDE;
                     dynamicEnsembleIdx = tempDEIdx;
                 end;
             end;
         end;
         
-        comb = dynamicEnsemble * votec;
+        comb = dynamicEnsemble * combMethod;
         temp = testc(testPr, comb);
         
     end;
@@ -71,20 +71,8 @@ for testIndex = 1 : numTest
 end;
 
 result = 100 - ( (totalError/numTest) * 100 );
-fprintf('Test results result for OLA %f \n',(totalError/numTest) * 100);
+fprintf('Error_OLA %f \n',(totalError/numTest) * 100);
 
 close(h);
-% para cada padrão de teste
-    % filter
-    % % para cada classificador do ensemble
-    % % % avalia de acordo com os k-vizinhos do padrão de teste
-    % % faz o ranking dos classificadores do ensemble de acordo com a
-    % % precisão
-    % wrapper
-    % % inicializa um subconjunto com o primeiro do ranking
-    % % avalia os k-vizinhos e armazena em uma variável
-    % % para cada elemento do ranking (a partir do 2º)
-    % % % adiciona o classificador no subconjunto temporário
-    % % % avalia os k-vizinhos e verifica se foi maior que o anterior
-    % % % se for maior
-    % % % % adiciona no subconjunto
+
+end

@@ -1,4 +1,3 @@
-Linear Perceptron, untrained  mapping   --> perlc
 Database vehicle
 Test results result for KNORAE 17.298578 
 Test results result for KNORAE 19.431280 
